@@ -1,2 +1,1 @@
-# pallottausa.github.io
-Pallotta Pavers and Concrete Website
+Website of Pallotta USA
