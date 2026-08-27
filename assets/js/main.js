@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a.eml').forEach(function (a) {
+    var addr = a.getAttribute('data-u') + String.fromCharCode(64) + a.getAttribute('data-d');
+    a.setAttribute('href', 'mail' + 'to:' + addr);
+    a.textContent = addr;
+  });
+
   var toggle = document.getElementById('navToggle');
   var mobileNav = document.getElementById('mobileNav');
   if (toggle && mobileNav) {

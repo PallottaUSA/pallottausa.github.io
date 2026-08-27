@@ -1,1 +1,2 @@
-Website of Pallotta USA
+# pallotta-seo
+SEO multiplage work folder
