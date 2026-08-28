@@ -184,11 +184,11 @@
               <label class="form-label" for="qf-email">Email</label>
               <input class="form-input" type="email" id="qf-email" name="email">
             </div>
-            <div class="form-row" style="display: none;">
-              <label class="form-label" for="qf-service">Service needed</label>
-              <select class="form-input" id="qf-service" disabled>
+            <div class="form-row">
+              <label class="form-label" for="qf-service">Service needed <span style="color: var(--orange);">*</span></label>
+              <select class="form-input" id="qf-service" name="service" required>
+                <option value="">Select a Service</option>
                 <optgroup label="Pavers">
-                  <option>Pavers &mdash; Patios</option>
                   <option>Pavers &mdash; Driveways</option>
                   <option>Pavers &mdash; Hardscapes</option>
                   <option>Pavers &mdash; Steps</option>
@@ -199,6 +199,7 @@
                   <option>Pavers &mdash; Other</option>
                 </optgroup>
                 <optgroup label="Concrete">
+                  <option>Concrete &mdash; Patios</option>
                   <option>Concrete &mdash; RV Pads</option>
                   <option>Concrete &mdash; Garage Floors</option>
                   <option>Concrete &mdash; Pole Barn / Metal Building Slabs</option>
