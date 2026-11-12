@@ -47,19 +47,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var mapEl = document.getElementById('serviceMap');
   if (mapEl && window.L) {
     var areas = [
-      { n: 'Pasco County', lat: 28.3232, lng: -82.4319, r: 26000, d: 'left', o: [-10, -14] },
-      { n: 'Northern Hillsborough County', lat: 28.0800, lng: -82.4000, r: 16000, d: 'bottom', o: [0, 4] },
-      { n: 'San Antonio', lat: 28.3358, lng: -82.2751, r: 5000, d: 'right', o: [8, -12] },
-      { n: 'Zephyrhills', lat: 28.2336, lng: -82.1812, r: 8000, d: 'right', o: [8, -12] },
-      { n: 'Dade City', lat: 28.3647, lng: -82.1959, r: 7000, d: 'top', o: [0, -28] },
-      { n: "Land O' Lakes", lat: 28.2189, lng: -82.4590, r: 9000, d: 'right', o: [10, -12] },
-      { n: 'Wesley Chapel', lat: 28.2397, lng: -82.3279, r: 9000, d: 'bottom', o: [0, 4] },
-      { n: 'Spring Hill', lat: 28.4769, lng: -82.5254, r: 11000, d: 'left', o: [-10, -12] },
-      { n: 'Brooksville', lat: 28.5553, lng: -82.3879, r: 8000, d: 'right', o: [8, -12] },
-      { n: 'Lutz', lat: 28.1511, lng: -82.4615, r: 7000, d: 'bottom', o: [0, 4] },
-      { n: 'Odessa', lat: 28.1928, lng: -82.5915, r: 7000, d: 'left', o: [-10, -12] }
+      { n: 'Dade City', lat: 28.3647, lng: -82.1959, d: 'top', o: [0, -28] },
+      { n: 'Zephyrhills', lat: 28.2336, lng: -82.1812, d: 'right', o: [8, -12] },
+      { n: 'San Antonio / St. Leo', lat: 28.3358, lng: -82.2751, d: 'left', o: [-10, -12] }
     ];
-    var map = L.map('serviceMap', { scrollWheelZoom: false }).setView([28.33, -82.40], 9);
+    var map = L.map('serviceMap', { scrollWheelZoom: false }).setView([28.30, -82.22], 11);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors', maxZoom: 18
     }).addTo(map);
@@ -74,10 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
         .bindTooltip(a.n, { permanent: true, direction: a.d, offset: a.o, className: 'area-label' });
       group.push(m);
     });
-    map.fitBounds(L.featureGroup(group).getBounds(), { padding: [24, 24] });
+    map.fitBounds(L.featureGroup(group).getBounds(), { padding: [60, 60], maxZoom: 11 });
     setTimeout(function () {
       map.invalidateSize();
-      map.fitBounds(L.featureGroup(group).getBounds(), { padding: [24, 24] });
+      map.fitBounds(L.featureGroup(group).getBounds(), { padding: [60, 60], maxZoom: 11 });
     }, 300);
   }
 
